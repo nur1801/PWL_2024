@@ -2,9 +2,7 @@
 
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\index;
-use App\Http\Controllers\about;
-use App\Http\Controllers\articles;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
@@ -55,11 +53,11 @@ Route::get('/user/{name?}', function($name='John'){
 });
 Route::get('/hello', [WelcomeController::class, 'hello']);
 
-Route::get('/', [index::class, 'welcome']);
+Route::get('/', [PageController::class, 'index']);
 
-Route::get('/about', [about::class, 'about']);
+Route::get('/about', [PageController::class, 'about']);
 
-Route::get('/articles/{id}', [articles::class, 'articles']);
+Route::get('/articles/{id}', [PageController::class, 'articles']);
 
 Route::get('/', [HomeController::class, 'welcome']);
 
